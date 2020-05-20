@@ -1,4 +1,5 @@
 import fs from "fs";
+import { execSync } from "child_process";
 import multer from "multer";
 import path from "path";
 import { Request } from "express";
@@ -30,15 +31,9 @@ export const storage = multer.diskStorage({
         } else {
             arr.push("anonymus");
         }
-        let uPath = "";
-        arr.forEach((e) => {
-            uPath = path.join(uPath, e);
-            const pp = path.join(uploadPath, uPath);
-            if (!fs.existsSync(pp)) {
-                fs.mkdirSync(pp, "774");
-            }
-        });
-        cb(null, path.join(uploadPath, ...arr));
+        const des = path.join(uploadPath, ...arr);
+        execSync(`mkdir -p ${des}`);
+        cb(null, des);
     },
     filename: (req, file, cb) => {
         const { name, ext } = path.parse(file.originalname);
