@@ -5,7 +5,7 @@ import bcrypt from "@/services/auth/bcrypt";
 import { pick } from "lodash";
 import * as _ from "lodash";
 import axios from "axios";
-import CustomErorr from "@/utils/error/custom-error";
+import CustomError from "@/utils/error/custom-error";
 import errors from "@/constant/errors";
 
 export async function handleRegister(
@@ -39,13 +39,13 @@ export async function handleLogin(
         const { username, password } = req.body;
         const user = await UserProvider.getOne({ username });
         if (!user) {
-            throw new CustomErorr(errors.AUTH.USER_NOT_FOUND);
+            throw new CustomError(errors.AUTH.USER_NOT_FOUND);
         }
         if (!bcrypt.compare(password, user.password)) {
-            throw new CustomErorr(errors.AUTH.PASSWORD_WRONG);
+            throw new CustomError(errors.AUTH.PASSWORD_WRONG);
         }
         if (user.isBlock) {
-            throw new CustomErorr(errors.AUTH.ACCOUNT_BLOCK);
+            throw new CustomError(errors.AUTH.ACCOUNT_BLOCK);
         }
         const token = jwt.sign({ _id: user._id });
         await UserProvider.updateOne(
@@ -73,7 +73,7 @@ export async function handleGetInfo(
 ) {
     const user = _.get(req, "user");
     if (!user) {
-        return next(new CustomErorr(errors.AUTH.LOGIN_REQUIRED));
+        return next(new CustomError(errors.AUTH.LOGIN_REQUIRED));
     }
     return res.json(user);
 }
@@ -85,7 +85,7 @@ export async function handleLogout(
 ) {
     const user = _.get(req, "user");
     if (!user) {
-        return next(new CustomErorr(errors.AUTH.LOGIN_REQUIRED));
+        return next(new CustomError(errors.AUTH.LOGIN_REQUIRED));
     }
     const token = req.headers.authorization.split("Bearer ").pop();
     await UserProvider.updateOne(
@@ -128,7 +128,7 @@ export async function handleLoginWithFacebook(
         return res.json({ token, user, success: true });
     } catch (error) {
         console.log(error);
-        next(new CustomErorr(errors.AUTH.LOGIN_FAILURE));
+        next(new CustomError(errors.AUTH.LOGIN_FAILURE));
     }
 }
 

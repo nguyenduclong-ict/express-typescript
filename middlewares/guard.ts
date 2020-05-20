@@ -1,7 +1,7 @@
 import { NextFunction, Response, Request } from "express";
 import * as _ from "lodash";
 import GetUserInfo from "@/middlewares/user-info";
-import CustomErorr from "@/utils/error/custom-error";
+import CustomError from "@/utils/error/custom-error";
 import errors from "@/constant/errors";
 
 export default function (rule?: CheckOptions) {
@@ -20,7 +20,7 @@ export default function (rule?: CheckOptions) {
                 permissionCondition,
             } = rule;
             if (!user) {
-                return next(new CustomErorr(errors.AUTH.LOGIN_REQUIRED));
+                return next(new CustomError(errors.AUTH.LOGIN_REQUIRED));
             }
             const passRole = checkRole(roles, user.roles, roleCondition);
             const passPermission = checkPermission(
@@ -32,10 +32,10 @@ export default function (rule?: CheckOptions) {
             if (passRole || passPermission) {
                 next();
             } else if (!passRole) {
-                return next(new CustomErorr(errors.AUTH.ROLE_CHECK_NOT_PASS));
+                return next(new CustomError(errors.AUTH.ROLE_CHECK_NOT_PASS));
             } else if (passPermission) {
                 return next(
-                    new CustomErorr(errors.AUTH.PERMISSION_CHECK_NOT_PASS)
+                    new CustomError(errors.AUTH.PERMISSION_CHECK_NOT_PASS)
                 );
             }
         });

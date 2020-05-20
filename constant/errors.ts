@@ -37,4 +37,8 @@ export default {
             code: 403,
         },
     },
+    VALIDATE: {
+        message: "Dữ liệu không đúng định dạng",
+        code: 422,
+    },
 };

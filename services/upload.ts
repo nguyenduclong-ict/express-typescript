@@ -3,7 +3,7 @@ import { execSync } from "child_process";
 import multer from "multer";
 import path from "path";
 import { Request } from "express";
-import CustomErorr from "@/utils/error/custom-error";
+import CustomError from "@/utils/error/custom-error";
 import errors from "@/constant/errors";
 
 // Setup multer
@@ -45,7 +45,7 @@ export const storage = multer.diskStorage({
 
 function fileFilter(req: Request, file: Express.Multer.File, cb) {
     if (!MIME_TYPE_MAP.find((mimetype) => mimetype.test(file.mimetype))) {
-        return cb(new CustomErorr(errors.UPLOAD.FILE_NOT_SUPPORT), false);
+        return cb(new CustomError(errors.UPLOAD.FILE_NOT_SUPPORT), false);
     }
     cb(null, true);
 }
