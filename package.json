@@ -10,7 +10,8 @@
         "cli": "./utils/cli/index.js"
     },
     "keywords": [],
-    "author": "",
+    "author": "Nguyễn Đức Long <longnd@rabiloo.com.vn>",
+    "repository": "git@github.com:nguyenduclong-ict/express-typescript.git",
     "license": "ISC",
     "dependencies": {
         "async": "^3.2.0",
