@@ -13,5 +13,7 @@ module.exports.newProject = async function (args = []) {
     execSync(
         `git clone ${EXAMPLE_PROJECT} ${Path.join(process.cwd(), projectName)}`
     );
-    execSync(`cd ${projectName} && cp env.example.ts env.ts && yarn`);
+    execSync(
+        `cd ${projectName} && cp env.example.ts env.ts && rm -rf .git && git init && yarn init -y && yarn`
+    );
 };
