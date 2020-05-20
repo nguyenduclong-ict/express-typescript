@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "allowJs": true,
+        "target": "es6",
+        "outDir": "build",
+        "paths": {
+            "@/*": ["./*"]
+        }
+    },
+    "include": ["./index.ts", "**/*", "utils/global.d.ts", "routes/**/*.ts"],
+    "exclude": ["build", "node_modules/**/*", "utils/cli"],
+    "lib": ["es2015"]
+}

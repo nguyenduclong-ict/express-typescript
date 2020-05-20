@@ -1,0 +1,53 @@
+{
+    "name": "express-typescript",
+    "version": "1.0.0",
+    "description": "Example express with typescript",
+    "main": "index.ts",
+    "scripts": {
+        "dev": "npx concurrently -n tsc,nm \"tsc -w\" \"nodemon build/server\"",
+        "lint": "tslint --project .",
+        "prettier": "prettier --config .prettierrc --write './**/*.{ts,js}'",
+        "cli": "./utils/cli/index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "async": "^3.2.0",
+        "axios": "^0.19.2",
+        "bcrypt": "^4.0.1",
+        "bull": "^3.14.0",
+        "cors": "^2.8.5",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "jsonwebtoken": "^8.5.1",
+        "lodash": "^4.17.15",
+        "mongoose": "^5.9.15",
+        "mongoose-sequence": "^5.2.2",
+        "morgan": "^1.10.0",
+        "multer": "^1.4.2",
+        "socket.io": "^2.3.0"
+    },
+    "devDependencies": {
+        "@types/async": "^3.2.3",
+        "@types/bcrypt": "^3.0.0",
+        "@types/bull": "^3.13.0",
+        "@types/cors": "^2.8.6",
+        "@types/dotenv": "^8.2.0",
+        "@types/express": "^4.17.6",
+        "@types/jsonwebtoken": "^8.5.0",
+        "@types/lodash": "^4.14.151",
+        "@types/mongoose": "^5.7.20",
+        "@types/morgan": "^1.9.0",
+        "@types/multer": "^1.4.3",
+        "@types/socket.io": "^2.1.6",
+        "concurrently": "^5.2.0",
+        "module-alias": "^2.2.2",
+        "nodemon": "^2.0.4",
+        "tslint": "^6.1.2",
+        "typescript": "^3.9.2"
+    },
+    "_moduleAliases": {
+        "@": "build"
+    }
+}

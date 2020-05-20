@@ -1,0 +1,6 @@
+{
+    "ignore": [],
+    "watch": ["build/"],
+    "exec": "node build",
+    "ext": "js,json"
+}
