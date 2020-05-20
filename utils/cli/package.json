@@ -1,5 +1,5 @@
 {
-    "name": "fesjs-cli",
+    "name": "fesjs",
     "version": "1.0.0",
     "main": "index.js",
     "bin": "index.js",
