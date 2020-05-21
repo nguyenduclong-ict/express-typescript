@@ -7,7 +7,7 @@
         "dev": "npx concurrently -n tsc,nm \"tsc -w\" \"nodemon build/server\"",
         "lint": "tslint --project .",
         "prettier": "prettier --config .prettierrc --write './**/*.{ts,js}'",
-        "cli": "./utils/cli/index.js"
+        "cli": "./lib/fesjs/cli/index.js"
     },
     "keywords": [],
     "author": "Nguyễn Đức Long <longnd@rabiloo.com.vn>",

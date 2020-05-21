@@ -3,7 +3,7 @@ import { execSync } from "child_process";
 import multer from "multer";
 import path from "path";
 import { Request } from "express";
-import CustomError from "@/utils/error/custom-error";
+import CustomError from "@/lib/fesjs/error/custom-error";
 import errors from "@/constant/errors";
 
 // Setup multer

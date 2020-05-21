@@ -1,4 +1,4 @@
-import { Provider } from "@/utils/fesjs/mongo";
+import { Provider } from "@/lib/fesjs/mongo";
 import Location from "./model";
 
 class LocationProvider extends Provider {}

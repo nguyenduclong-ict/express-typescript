@@ -5,7 +5,7 @@ import bcrypt from "@/services/auth/bcrypt";
 import { pick } from "lodash";
 import * as _ from "lodash";
 import axios from "axios";
-import CustomError from "@/utils/error/custom-error";
+import CustomError from "@/lib/fesjs/error/custom-error";
 import errors from "@/constant/errors";
 
 export async function handleRegister(
