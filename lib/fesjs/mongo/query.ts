@@ -17,14 +17,14 @@ export class Provider {
 
     constructor(model: Model<Document, {}>) {
         this.model = model;
-        this.getOne = getOne(this.model);
-        this.getMany = getMany(this.model);
-        this.createOne = createOne(this.model);
-        this.createMany = createMany(this.model);
-        this.updateOne = updateOne(this.model);
-        this.updateMany = updateMany(this.model);
-        this.deleteOne = deleteOne(this.model);
-        this.deleteMany = deleteMany(this.model);
+        this.getOne = getOne(model);
+        this.getMany = getMany(model);
+        this.createOne = createOne(model);
+        this.createMany = createMany(model);
+        this.updateOne = updateOne(model);
+        this.updateMany = updateMany(model);
+        this.deleteOne = deleteOne(model);
+        this.deleteMany = deleteMany(model);
     }
 
     getOne: GetOneFunction;
@@ -52,18 +52,19 @@ export function getMany(model: Model<Document, {}>) {
     return async (condition, options: GetManyOptions) => {
         const defaultOptions: GetManyOptions = {
             populates: [],
-            pagination: true,
-            page: 0,
-            limit: 10,
+            pagination: {
+                disabled: true,
+            },
         };
         options = { ...defaultOptions, ...options };
-        const { page, pagination, limit, populates } = options;
-        if (pagination) {
+        const { pagination, populates } = options;
+        if (!pagination.disabled) {
             // skip and limit
+            const { page, pageSize } = pagination;
             const task = model
                 .find(condition)
-                .skip(limit * page)
-                .limit(limit);
+                .skip(pageSize * page)
+                .limit(pageSize);
             // populates
             populates.forEach((field) => {
                 task.populate(field);
@@ -76,16 +77,13 @@ export function getMany(model: Model<Document, {}>) {
             const pager = {
                 page,
                 total: count,
-                pageSize: limit,
-                totalPage: Math.ceil(count / limit),
+                pageSize,
+                totalPage: Math.ceil(count / pageSize),
             };
             return { data: list || [], pager };
         } else {
             // No pagination
             const task = model.find(condition);
-            // skip and limt
-            if (isNaN(page)) task.skip(page * limit);
-            if (isNaN(limit)) task.limit(limit);
             // populates
             populates.forEach((field) => {
                 task.populate(field);

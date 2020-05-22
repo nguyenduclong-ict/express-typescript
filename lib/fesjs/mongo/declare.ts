@@ -59,8 +59,10 @@ export declare type DeleteOneFunction = (
 >;
 
 export declare interface GetManyOptions {
-    page?: number;
-    limit?: number;
     populates?: string[];
-    pagination?: boolean;
+    pagination?: {
+        disabled?: boolean;
+        page?: number;
+        pageSize?: number;
+    };
 }
