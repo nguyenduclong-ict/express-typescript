@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 import declareHooks from "./hooks";
-import { nonAccentVietnamese } from "@/lib/fesjs/extras";
+import { nonAccentVietnamese } from "@/lib/core/extras";
 
 const schema = new Schema({
     name: {

@@ -1,13 +1,14 @@
 {
-    "name": "express-typescript",
+    "name": "fests",
     "version": "1.0.0",
     "description": "Example express with typescript",
-    "main": "index.ts",
+    "bin": "lib/core/cli",
     "scripts": {
         "dev": "npx concurrently -n tsc,nm \"tsc -w\" \"nodemon build/server\"",
         "lint": "tslint --project .",
         "prettier": "prettier --config .prettierrc --write './**/*.{ts,js}'",
-        "cli": "./lib/fesjs/cli/index.js"
+        "cli": "./lib/fesjs/cli/index.js",
+        "update:core": "cd lib/core && git pull origin master"
     },
     "keywords": [],
     "author": "Nguyễn Đức Long <longnd@rabiloo.com.vn>",
@@ -18,6 +19,7 @@
         "axios": "^0.19.2",
         "bcrypt": "^4.0.1",
         "bull": "^3.14.0",
+        "chalk": "^4.0.0",
         "check-types": "^11.1.2",
         "cors": "^2.8.5",
         "dotenv": "^8.2.0",

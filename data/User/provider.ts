@@ -1,4 +1,4 @@
-import { Provider } from "@/lib/fesjs/mongo";
+import { Provider } from "@/lib/core/mongo";
 import User from "./model";
 import RoleProvider from "@/data/Role/provider";
 

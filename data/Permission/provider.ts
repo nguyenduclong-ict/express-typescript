@@ -1,4 +1,4 @@
-import { Provider } from "@/lib/fesjs/mongo";
+import { Provider } from "@/lib/core/mongo";
 import Permission from "./model";
 
 class PermissionProvider extends Provider {}

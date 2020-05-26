@@ -3,8 +3,8 @@ import "./env";
 import { Response } from "express";
 import { app, server } from "./app";
 import startup from "@/services/startup";
-import initRouter from "@/lib/fesjs/router";
-import CustomError from "@/lib/fesjs/error/custom-error";
+import initRouter from "@/lib/core/router";
+import CustomError from "@/lib/core/error/custom-error";
 
 (async () => {
     // start up service

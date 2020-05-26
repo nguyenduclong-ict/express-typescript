@@ -1,7 +1,7 @@
 import { NextFunction, Response, Request } from "express";
 import * as _ from "lodash";
 import GetUserInfo from "@/middlewares/user-info";
-import CustomError from "@/lib/fesjs/error/custom-error";
+import CustomError from "@/lib/core/error/custom-error";
 import errors from "@/constant/errors";
 
 export default function (rule?: CheckOptions) {

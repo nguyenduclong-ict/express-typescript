@@ -1,4 +1,4 @@
-import { Provider } from "@/lib/fesjs/mongo";
+import { Provider } from "@/lib/core/mongo";
 import { Types } from "mongoose";
 import Shop from "./model";
 import WarehouseProvider from "@/data/_Sale/Warehouse/provider";
