@@ -34,3 +34,6 @@ env.ts
 
 # build
 build/
+
+# lib
+lib/fesjs
