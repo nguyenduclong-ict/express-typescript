@@ -1,5 +1,5 @@
 {
-    "name": "fests",
+    "name": "fests-template",
     "version": "1.0.0",
     "description": "Example express with typescript",
     "main": "index.ts",
@@ -8,7 +8,8 @@
         "dev": "npx concurrently -n tsc,nm \"tsc -w\" \"nodemon build/server\"",
         "lint": "tslint --project .",
         "prettier": "prettier --config .prettierrc --write './**/*.{ts,js}'",
-        "cli": "node lib/core/cli/index.js"
+        "cli": "node lib/core/cli/index.js",
+        "update:core": "rm -rf lib/core && git clone https://github.com/nguyenduclong-ict/fests.git lib/core"
     },
     "keywords": [],
     "author": "Nguyễn Đức Long <longnd@rabiloo.com.vn>",
