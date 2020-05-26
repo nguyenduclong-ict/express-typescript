@@ -7,8 +7,7 @@
         "dev": "npx concurrently -n tsc,nm \"tsc -w\" \"nodemon build/server\"",
         "lint": "tslint --project .",
         "prettier": "prettier --config .prettierrc --write './**/*.{ts,js}'",
-        "cli": "./lib/fesjs/cli/index.js",
-        "update:core": "cd lib/core && git pull origin master"
+        "cli": "./lib/fesjs/cli/index.js"
     },
     "keywords": [],
     "author": "Nguyễn Đức Long <longnd@rabiloo.com.vn>",
@@ -30,6 +29,7 @@
         "mongoose-sequence": "^5.2.2",
         "morgan": "^1.10.0",
         "multer": "^1.4.2",
+        "ora": "^4.0.4",
         "socket.io": "^2.3.0"
     },
     "devDependencies": {
