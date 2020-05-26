@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, model } from 'mongoose'
 
 const schema = new Schema({
     name: { type: String, required: true },
@@ -10,8 +10,8 @@ const schema = new Schema({
         type: Schema.Types.ObjectId,
     },
     createdAt: { type: Date, default: Date.now },
-});
+})
 
-const File = model("File", schema);
+const File = model('File', schema)
 
-export default File;
+export default File

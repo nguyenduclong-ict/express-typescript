@@ -1,7 +1,7 @@
-import { Router } from 'express';
+import { Router } from 'express'
 import * as service from './service'
-const router = Router();
+const router = Router()
 // ------- Declare router -------
 
 // ------------------------------
-export default router;
+export default router

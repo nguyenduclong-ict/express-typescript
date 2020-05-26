@@ -1,6 +1,6 @@
-import { Schema, model } from "mongoose";
-import declareHooks from "./hooks";
-import { nonAccentVietnamese } from "@/lib/core/extras";
+import { Schema, model } from 'mongoose'
+import declareHooks from './hooks'
+import { nonAccentVietnamese } from '@/lib/core/extras'
 
 const schema = new Schema({
     name: {
@@ -11,9 +11,9 @@ const schema = new Schema({
         type: String,
         default() {
             return nonAccentVietnamese(this.name)
-                .replace(/ |\.|\/|,|&|\?|\:|\^|~/g, "-")
-                .replace(/-+/g, "-")
-                .toLowerCase();
+                .replace(/ |\.|\/|,|&|\?|\:|\^|~/g, '-')
+                .replace(/-+/g, '-')
+                .toLowerCase()
         },
         required: true,
     },
@@ -32,20 +32,20 @@ const schema = new Schema({
             countryCode: String,
         },
         default: {
-            address: "",
-            provinceCode: "",
-            districtCode: "",
-            countryCode: "84",
+            address: '',
+            provinceCode: '',
+            districtCode: '',
+            countryCode: '84',
         },
         required: true,
     },
     userId: {
         type: Schema.Types.ObjectId,
-        ref: "User",
+        ref: 'User',
         required: true,
     },
     createdAt: { type: Date, default: Date.now },
-});
+})
 
-declareHooks(schema);
-export default model("Shop", schema);
+declareHooks(schema)
+export default model('Shop', schema)

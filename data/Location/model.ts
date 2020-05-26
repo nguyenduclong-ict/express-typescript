@@ -1,14 +1,14 @@
-import { Schema, model } from "mongoose";
-import hooks from "./hooks";
+import { Schema, model } from 'mongoose'
+import hooks from './hooks'
 
 const schema = new Schema({
     name: {
         type: String,
-        default: "",
+        default: '',
     },
     type: {
         type: String,
-        enum: ["country", "district", "city"],
+        enum: ['country', 'district', 'city'],
     },
     slug: {
         type: String,
@@ -23,7 +23,7 @@ const schema = new Schema({
         type: String,
     },
     createdAt: { type: Date, default: Date.now },
-});
+})
 
-hooks(schema);
-export default model("Location", schema);
+hooks(schema)
+export default model('Location', schema)

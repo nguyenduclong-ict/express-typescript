@@ -2,7 +2,7 @@
     "name": "fests",
     "version": "1.0.0",
     "description": "Example express with typescript",
-    "bin": "lib/core/cli/index.js",
+    "bin": "lib/core/cli.js",
     "scripts": {
         "dev": "npx concurrently -n tsc,nm \"tsc -w\" \"nodemon build/server\"",
         "lint": "tslint --project .",

@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, model } from 'mongoose'
 
 const schema = new Schema({
     id: {
@@ -9,29 +9,29 @@ const schema = new Schema({
     name: {
         type: String,
         default() {
-            return this.id + " role";
+            return this.id + ' role'
         },
     },
     type: {
         type: String,
-        enum: ["system", "custom"],
-        default: "custom",
+        enum: ['system', 'custom'],
+        default: 'custom',
     },
     parent: {
         type: Schema.Types.ObjectId,
-        ref: "Role",
+        ref: 'Role',
     },
     // For custom staff role
     shopId: {
         type: Schema.Types.ObjectId,
-        ref: "Shop",
+        ref: 'Shop',
     },
     // Danh sách các quyền trong
     permissionOfStaff: {
         type: [String],
     },
-});
+})
 
-const Role = model("Role", schema);
+const Role = model('Role', schema)
 
-export default Role;
+export default Role

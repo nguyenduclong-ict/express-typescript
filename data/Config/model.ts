@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, model } from 'mongoose'
 
 const schema = new Schema({
     key: {
@@ -12,14 +12,14 @@ const schema = new Schema({
     },
     type: {
         type: String,
-        enum: ["app", "user"],
+        enum: ['app', 'user'],
     },
     for: {
         type: Schema.Types.ObjectId,
     },
     createdAt: { type: Date, default: Date.now },
-});
+})
 
-const Config = model("Config", schema);
+const Config = model('Config', schema)
 
-export default Config;
+export default Config

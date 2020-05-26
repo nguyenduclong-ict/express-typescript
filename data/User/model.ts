@@ -1,10 +1,10 @@
-import { Schema, model } from "mongoose";
+import { Schema, model } from 'mongoose'
 
 const schema = new Schema({
     username: {
         type: String,
         default() {
-            return "fb" + this.facebook;
+            return 'fb' + this.facebook
         },
         unique: true,
         required: true,
@@ -21,14 +21,14 @@ const schema = new Schema({
             image: String,
             gender: {
                 type: String,
-                enum: ["male", "female"],
+                enum: ['male', 'female'],
             },
         },
         default: {
-            name: "",
+            name: '',
             age: 0,
-            image: "",
-            gender: "male",
+            image: '',
+            gender: 'male',
         },
     },
     email: {
@@ -39,14 +39,14 @@ const schema = new Schema({
     roles: [
         {
             type: [Schema.Types.ObjectId],
-            ref: "Role",
+            ref: 'Role',
         },
     ],
     tokens: { type: [String], default: [] },
     isBlock: { type: Boolean, required: true, default: false },
     createdAt: { type: Date, default: Date.now },
-});
+})
 
-const User = model("User", schema);
+const User = model('User', schema)
 
-export default User;
+export default User

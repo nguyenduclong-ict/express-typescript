@@ -1,6 +1,6 @@
-import { Provider } from "@/lib/core/mongo";
-import File from "./model";
+import { Provider } from '@/lib/core/mongo'
+import File from './model'
 
 class FileProvider extends Provider {}
 
-export default new FileProvider(File);
+export default new FileProvider(File)

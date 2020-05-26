@@ -1,2 +1,2 @@
-export * from "./declare";
-export * from "./query";
+export * from './declare'
+export * from './query'

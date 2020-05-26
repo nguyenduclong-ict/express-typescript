@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, model } from 'mongoose'
 
 const schema = new Schema({
     name: {
@@ -13,10 +13,10 @@ const schema = new Schema({
             countryCode: String,
         },
         default: {
-            address: "",
-            provinceCode: "",
-            districtCode: "",
-            countryCode: "",
+            address: '',
+            provinceCode: '',
+            districtCode: '',
+            countryCode: '',
         },
         required: true,
     },
@@ -29,8 +29,8 @@ const schema = new Schema({
         required: true,
     },
     createdAt: { type: Date, default: Date.now },
-});
+})
 
-const Warehouse = model("Warehouse", schema);
+const Warehouse = model('Warehouse', schema)
 
-export default Warehouse;
+export default Warehouse

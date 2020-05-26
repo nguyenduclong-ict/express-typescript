@@ -1,21 +1,21 @@
-import { Router } from "express";
-import * as service from "./service";
-const router = Router();
-import AuthGuard from "@/middlewares/guard";
-import upload from "@/services/upload";
+import { Router } from 'express'
+import * as service from './service'
+const router = Router()
+import AuthGuard from '@/middlewares/guard'
+import upload from '@/services/upload'
 // ------- Declare router -------
 router.post(
-    "/multiple",
+    '/multiple',
     AuthGuard(),
-    upload.array("files"),
+    upload.array('files'),
     service.handleUploadMultiple
-);
+)
 
 router.post(
-    "/single",
+    '/single',
     AuthGuard(),
-    upload.single("file"),
+    upload.single('file'),
     service.handleUploadSingle
-);
+)
 // ------------------------------
-export default router;
+export default router

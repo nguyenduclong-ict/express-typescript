@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, model } from 'mongoose'
 
 const schema = new Schema({
     of: {
@@ -14,6 +14,6 @@ const schema = new Schema({
         required: true,
     },
     createdAt: { type: Date, default: Date.now },
-});
+})
 
-export default model("Permission", schema);
+export default model('Permission', schema)
