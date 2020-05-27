@@ -9,7 +9,8 @@
         "lint": "tslint --project .",
         "prettier": "prettier --config .prettierrc --write './**/*.{ts,js}'",
         "cli": "node lib/core/cli/index.js",
-        "update:core": "rm -rf lib/core && git clone https://github.com/nguyenduclong-ict/fests.git lib/core"
+        "update:core": "rm -rf lib/core && git clone https://github.com/nguyenduclong-ict/fests.git lib/core",
+        "test": "ts-node test"
     },
     "keywords": [],
     "author": "Nguyễn Đức Long <longnd@rabiloo.com.vn>",
